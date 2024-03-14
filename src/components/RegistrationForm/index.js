@@ -1,14 +1,16 @@
 import {Component} from 'react'
 import './index.css'
 
+const initialState = {
+  fNameInput: '',
+  lNameInput: '',
+  isFNameEmpty: false,
+  isLNameEmpty: false,
+  isSubmitClicked: false,
+}
+
 class RegistrationForm extends Component {
-  state = {
-    fNameInput: '',
-    lNameInput: '',
-    isFNameEmpty: false,
-    isLNameEmpty: false,
-    isSubmitClicked: false,
-  }
+  state = initialState
 
   onChangeFName = event => {
     this.setState({fNameInput: event.target.value})
@@ -35,7 +37,7 @@ class RegistrationForm extends Component {
   }
 
   onAnotherResponse = () => {
-    this.setState({isSubmitClicked: false})
+    this.setState(initialState)
   }
 
   onFNameBlur = event => {
